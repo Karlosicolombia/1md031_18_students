@@ -21,7 +21,7 @@ Create an index.html file which contains:
 	- [ ] Information about allergies 
 - [ ] A section to collect customer information:
 	- [ ] First- and Last Name (in one field)
-	- [ ] E-Mail Address
+	- [] E-Mail Address
 	- [ ] Street
 	- [ ] House Number (only allowing numbers in this field)
 	- [ ] Gender (male, female, do not wish to provide as radio buttons)
