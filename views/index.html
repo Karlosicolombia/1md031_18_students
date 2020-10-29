@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+
     <head>
+      <link rel="stylesheet" type="text/css" href="C:\Users\Karlos\1md031_18_students\views">
       <h1>WELCOME TO THE BURGER WEBSITE</h1>
         <title>KARLOS BURGERS</title>
         <meta charset="utf-8"/>
@@ -10,15 +12,103 @@
 <h3>SELECT YOUR BURGER BELOW </h3>
 <h5>This is where your BURGERING begins</h5></br>
 
-<h4>COW BURGER</h4>
-<img src="http://res.cloudinary.com/simpleview/image/upload/v1424716210/clients/newark/Burger-Bound_300x300--Best-Burgers-_2d092958-f0ae-5102-0972f4419218d1ea.jpg"</br>
-<ul>
-    <li>100% BEEF BURGER</li>
-    <li>ONLY PICKLED ONIONS</li>
-    <li>BRIOCHE</li>
-</ul>
+<table>
+    <thead>
+        <tr>
+            <th>COW-BURGER</th>
+            <th>LEAF-BURGER</th>
+            <th>HYBRID-BURGER</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        <tr>
+            <td><img src="http://res.cloudinary.com/simpleview/image/upload/v1424716210/clients/newark/Burger-Bound_300x300--Best-Burgers-_2d092958-f0ae-5102-0972f4419218d1ea.jpg" width = 300 height =300 </br></td>
+            <td><img src="http://www.bite.co.nz/images/recipes/halloumi-burger-food-snob-recipe.jpg?width=1200&height=800&upscale=false"width = 300 height =300</td>
+            <td><img src="https://webstockreview.net/images/hamburger-clipart-cartoon-2.gif"width = 300 height =300</td>
+        </tr>
+
+    </tbody>
+    <tfoot>
+        <tr>
+            <td>  <ul>
+                  <li>100% BEEF BURGER</li>
+                  <li>ONLY PICKLED ONIONS</li>
+                  <li>BRIOCHE</li>
+              </ul> </td>
+
+            <td> <ul>
+                  <li>100% VEG BURGER</li>
+                  <li>ONLY WHEAT</li>
+                  <li>BRIOCHE</li>
+              </ul>
+            </td>
+
+            <td> <ul>
+                  <li>100% HALF MEAT HALF LEAF-BURGER</li>
+                  <li>LETTUCE AND BEEF</li>
+                  <li>BRIOCHE</li>
+              </ul>
+            </td>
+        </tr>
+    </tfoot>
+</table>
+
+
+
 <h2> Customer information</h2></br>
-<h3>This is where you provide important information</h3>
+<p>This is where you provide important information</p>
+
+
+<main>
+    <section id="contact">
+        <form>
+          <p>
+    <label for="Full Name">Full name</label><br>
+    <input type="text" id="fullname" name="fn" required="required" placeholder="Full name">
+</p>
+
+<p>
+  <label for="E-mail address">E-mail address</label><br>
+    <input type="text" id="email" name="em" required="required" placeholder="E-mail address">
+</p>
+<p>
+  <label for="Street">Street</label><br>
+    <input type="text" id="Street" name="Street" required="required" placeholder="Street name">
+</p>
+<p>
+    <label for="House">House</label><br>
+    <input type="text" id="House" name="ln" placeholder="House number">
+</p>
+<p>
+    <label for="Payment Method">Payment Method</label><br>
+    <select id="Payment Method" name="pm">
+        <option>Swish</option>
+        <option>Debit Card</option>
+        <option>Cash</option>
+
+    </select>
+</p>
+
+<p>Please select your gender:</p>
+  <input type="checkbox" id="male" name="gender" value="male">
+  <label for="male">Male</label><br>
+  <input type="checkbox" id="female" name="gender" value="female">
+  <label for="female">Female</label><br>
+  <input type="checkbox" id="other" name="gender" value="other" checked=checked>
+  <label for="other">Other</label>
+  <br>
+
+
+<button type="submit"><img src="https://thumbs.dreamstime.com/b/pizza-courier-motorbike-flat-character-riding-delivery-guy-scooter-wearing-protective-helmet-drawing-food-carrier-vector-160349904.jpg" width = 20 height =20 > Send Info</button>
+        </form>
+    </section>
+</main>
+
+
+
+
+</body>
 
 
 
