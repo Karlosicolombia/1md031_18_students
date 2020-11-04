@@ -1,0 +1,48 @@
+@import 'https://fonts.googleapis.com/css?family=Pacifico|Dosis';
+
+body {
+    font-family: arial;
+}
+  .allergi {
+        font-weight:bold;
+        
+      }
+
+
+
+.table{
+  margin: 0 auto;
+  width:33%
+  border: 50px
+  border: 10px outset red;
+}
+
+.fix{
+  width = 33%;
+  padding:50px;
+
+
+
+
+}
+
+
+#innehåll{
+  background-color: black;
+  color:white;
+  text-transform: uppercase;
+  width:100%;
+
+  border: 10px outset red;
+
+}
+
+#contact {
+  border: 10px outset red;
+}
+
+
+button:hover {
+    color:white;
+    background-color: magenta;
+}

@@ -2,7 +2,13 @@
 <html lang="en">
 
     <head>
-      <link rel="stylesheet" type="text/css" href="C:\Users\Karlos\1md031_18_students\views">
+      <script src="https://vuejs.org/js/vue.js"></script>
+      <script src="js/vue_script.js"></script>
+      <script src="js/js_script.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    background: #colour url("path/to/image.png") no-repeat scroll left top;
+
       <h1>WELCOME TO THE BURGER WEBSITE</h1>
         <title>KARLOS BURGERS</title>
         <meta charset="utf-8"/>
@@ -10,17 +16,21 @@
 
     <body>
 <h3>SELECT YOUR BURGER BELOW </h3>
+
+
+
+<section id="innehåll">
 <h5>This is where your BURGERING begins</h5></br>
 
-<table>
-    <thead>
+<table class="table">
+    <thead class ="fix">
         <tr>
             <th>COW-BURGER</th>
             <th>LEAF-BURGER</th>
             <th>HYBRID-BURGER</th>
         </tr>
     </thead>
-    <tbody>
+    <tbody class ="fix">
 
         <tr>
             <td><img src="http://res.cloudinary.com/simpleview/image/upload/v1424716210/clients/newark/Burger-Bound_300x300--Best-Burgers-_2d092958-f0ae-5102-0972f4419218d1ea.jpg" width = 300 height =300 </br></td>
@@ -29,31 +39,34 @@
         </tr>
 
     </tbody>
-    <tfoot>
+    <tfoot class="fix">
         <tr>
-            <td>  <ul>
+           <td>  <ul>
                   <li>100% BEEF BURGER</li>
-                  <li>ONLY PICKLED ONIONS</li>
+                    <span class="allergi"><li> ONLY PICKLED ONIONS</li></span>
                   <li>BRIOCHE</li>
-              </ul> </td>
+          </ul> </td>
 
-            <td> <ul>
+          <p>  <td> <ul>
+
                   <li>100% VEG BURGER</li>
                   <li>ONLY WHEAT</li>
                   <li>BRIOCHE</li>
-              </ul>
-            </td>
+                    </ul>
+                  </td>
 
             <td> <ul>
                   <li>100% HALF MEAT HALF LEAF-BURGER</li>
                   <li>LETTUCE AND BEEF</li>
                   <li>BRIOCHE</li>
-              </ul>
+                  </section>
+            </p>  </ul>
+
             </td>
         </tr>
     </tfoot>
 </table>
-
+</section>
 
 
 <h2> Customer information</h2></br>
@@ -114,5 +127,5 @@
 
 
 
-    </body>
+
 </html>
