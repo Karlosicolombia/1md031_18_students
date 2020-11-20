@@ -1,121 +1,171 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-      <script src="https://vuejs.org/js/vue.js"></script>
-      <script src="js/vue_script.js"></script>
-      <script src="js/js_script.js"></script>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8"/>
 
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" href="css/deli-very.css">
 
+  <script type="text/javascript" src="js/menu.js"></script>
 
+  <script src="/vue/vue.js" defer></script>
 
+  <script src="js/js_script.js" defer></script>
 
-        <title>KARLOS BURGERS</title>
-        <meta charset="utf-8"/>
-    </head>
+  <script src="/socket.io/socket.io.js" defer></script>
 
-    <body>
-      <section class="bakgrund">
-      <h1 class = "välkomsttext">WELCOME TO THE BURGER WEBSITE</h1>
-      <img src="http://eatupnewyork.com/wp-content/uploads/2015/02/Evening-Bar-H3.jpg">
-      <h1 class = "välkomsttext">WELCOME TO THE BURGER WEBSITE</h1>
-    </section>
-<h3>SELECT YOUR BURGER BELOW </h3>
+  <script src="js/vue_script.js" defer></script>
 
 
 
-<section id="innehåll">
-<h5>This is where your BURGERING begins</h5></br>
 
 
-<div class="wrapper">
-   <div class="COWBURGER">
-      <p> COW-BURGER</p>
-      <img src="http://res.cloudinary.com/simpleview/image/upload/v1424716210/clients/newark/Burger-Bound_300x300--Best-Burgers-_2d092958-f0ae-5102-0972f4419218d1ea.jpg" width = 300 height =300>
-
-        <li>100% BEEF BURGER </li>
-      <li> ONLY PICKLED ONIONS </li>
-       <li>BRIOCHE</li>
-   </div>
-
-  <div class="LEAFBURGER">
-    <p>LEAF-BURGER</p>
-    <img src="http://www.bite.co.nz/images/recipes/halloumi-burger-food-snob-recipe.jpg?width=1200&height=800&upscale=false"width = 300 height =300>
-    <p>
-      <li>100% VEG BURGER</li>
-      <li>ONLY WHEAT</li>
-      <li>BRIOCHE</li>
-    </p>
-  </div>
-
-<div class="HYBRIDBURGER">
-  <p>HYBRIDBURGER</p>
-    <img src="https://webstockreview.net/images/hamburger-clipart-cartoon-2.gif"width = 300 height =300>
-    <li>100% HALF MEAT HALF LEAF-BURGER</li>
-    <li>LETTUCE AND BEEF</li>
-    <li>BRIOCHE</li>
-
-</div>
 
 
- </div>
-
-</section>
 
 
-<h2> Customer information</h2></br>
-<p>This is where you provide important information</p>
 
 
-<main>
+
+  <title>DELI-VERY MAP</title>
+
+
+
+
+  <title>KARLOS BURGERS</title>
+
+
+</head>
+
+<body>
+  <main id = "TheMenu">
+  <section class="bakgrund">
+    <h1 class = "välkomsttext">WELCOME TO THE BURGER WEBSITE</h1>
+    <img src="http://eatupnewyork.com/wp-content/uploads/2015/02/Evening-Bar-H3.jpg">
+    <h1 class = "välkomsttext">WELCOME TO THE BURGER WEBSITE</h1>
+  </section>
+  <h3>SELECT YOUR BURGER BELOW </h3>
+
+
+
+  <section>
+
+    <h5>This is where your BURGERING begins</h5></br>
+
+
+    <div>
+      <h1 v-bind:title="arbitraryvariablename">
+        {{arbitraryvariablename}}
+      </h1>
+      <div class = "wrapper">
+
+        <div v-for="MenuItem in burgers">
+
+          <img v-bind:src = MenuItem.img>
+
+
+        <ul>
+          <li>{{MenuItem.name}} </li>
+          <li>    {{MenuItem.kCal + " kCal"}}             </li>
+
+
+        </ul>
+        <input type="checkbox" :value="MenuItem.name"  v-model="checkBurgers">
+        <p v-if = "MenuItem.lactose">
+           This burger contains lactose!           </p>
+           <p v-if = "MenuItem.gluten">
+               This burger contains gluten!
+             </p>
+
+
+        </div>
+      </div>
+    </div>
+
+    <div id="orderId">
+        <h2>  Your order </h2>
+
+    <div v-for="checkedBurger in checkBurgers">
+      <ul>      <li>
+        {{checkedBurger}}
+
+                </li>
+      </ul>
+
+    </div>
+    </div>
+
+  </section>
+
+
+  <h2> Customer information</h2></br>
+  <p>This is where you provide important information</p>
+
+
+
     <section id="contact">
-        <form>
-          <p>
-    <label for="Full Name">Full name</label><br>
-    <input type="text" id="fullname" name="fn" required="required" placeholder="Full name">
-</p>
+      <form>
+        <p>
+          <label for="Full Name">Full name</label><br>
+          <input type="text" id="fullname" name="fn" v-model="Fullname" required="required" placeholder="Full name">
+        </p>
 
-<p>
-  <label for="E-mail address">E-mail address</label><br>
-    <input type="text" id="email" name="em" required="required" placeholder="E-mail address">
-</p>
-<p>
-  <label for="Street">Street</label><br>
-    <input type="text" id="Street" name="Street" required="required" placeholder="Street name">
-</p>
-<p>
-    <label for="House">House</label><br>
-    <input type="text" id="House" name="ln" placeholder="House number">
-</p>
-<p>
-    <label for="Payment Method">Payment Method</label><br>
-    <select id="Payment Method" name="pm">
-        <option>Swish</option>
-        <option>Debit Card</option>
-        <option>Cash</option>
+        <p>
+          <label for="E-mail address">E-mail address</label><br>
+          <input type="text" id="email" name="em" v-model ="Email" required="required" placeholder="E-mail address">
+        </p>
 
-    </select>
-</p>
+        <p>
+          <label for="Payment Method">Payment Method</label><br>
+          <select v-model="Payment" id="Payment Method" name="pm">
+            <option>Swish</option>
+            <option>Debit Card</option>
+            <option>Cash</option>
 
-<p>Please select your gender:</p>
-  <input type="checkbox" id="male" name="gender" value="male">
-  <label for="male">Male</label><br>
-  <input type="checkbox" id="female" name="gender" value="female">
-  <label for="female">Female</label><br>
-  <input type="checkbox" id="other" name="gender" value="other" checked=checked>
-  <label for="other">Other</label>
-  <br>
+          </select>
+        </p>
+
+        <p>Please select your gender:</p>
+        <input type="checkbox" id="male" v-model="Gender" name="gender" value="male">
+        <label for="male">Male</label><br>
+        <input type="checkbox" id="female" v-model="Gender" name="gender" value="female">
+        <label for="female">Female</label><br>
+        <input type="checkbox" id="other" v-model="Gender" name="gender" value="other" checked=checked>
+        <label for="other">Other</label>
+        <br>
+
+        <div>
+          <h1> Click in the map to give your location! </h1>
+
+          <div class="view-box">
+            <div id="dots" v-on:click="displayOrder">
+                <div
+                  v-bind:style="{ left: coordinates.x + 'px', top: coordinates.y + 'px'}">
+                  T
+                </div>
+            </div>
+          </div>
+        </div>
 
 
-<button type="submit"><img src="https://thumbs.dreamstime.com/b/pizza-courier-motorbike-flat-character-riding-delivery-guy-scooter-wearing-protective-helmet-drawing-food-carrier-vector-160349904.jpg" width = 20 height =20 > Send Info</button>
-        </form>
+
+
+        <button type="myButtonID"><img src="https://thumbs.dreamstime.com/b/pizza-courier-motorbike-flat-character-riding-delivery-guy-scooter-wearing-protective-helmet-drawing-food-carrier-vector-160349904.jpg" width = 20 height =20 > Send Order!</button>
+
+
+
+      </form>
+
     </section>
 
 
 
-</main>
-
+  </main>
+<footer>
+COPYRIGHT KARLOS BURGERS 2020
+</footer>
 
 
 

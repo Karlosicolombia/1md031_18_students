@@ -19,9 +19,15 @@ body {
      grid-gap: 10%;
      grid-template-columns: 30% 30% 30%;
      background-color: black;
-     color: #FloralWhite;
+     color: FloralWhite;
      margin-left: 5%;
      margin-top: 0;
+
+ }
+
+ .wrapper img {
+   height: 300px;
+   width: 300px;
  }
 
  .box {
