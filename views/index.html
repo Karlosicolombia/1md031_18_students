@@ -19,16 +19,6 @@
   <script src="js/vue_script.js" defer></script>
 
 
-
-
-
-
-
-
-
-
-
-
   <title>DELI-VERY MAP</title>
 
 
@@ -106,7 +96,7 @@
 
 
     <section id="contact">
-      <form>
+      <form onsubmit="return false">
         <p>
           <label for="Full Name">Full name</label><br>
           <input type="text" id="fullname" name="fn" v-model="Fullname" required="required" placeholder="Full name">
@@ -128,11 +118,11 @@
         </p>
 
         <p>Please select your gender:</p>
-        <input type="checkbox" id="male" v-model="Gender" name="gender" value="male">
+        <input type="radio" id="male" v-model="Gender" name="gender" value="Male">
         <label for="male">Male</label><br>
-        <input type="checkbox" id="female" v-model="Gender" name="gender" value="female">
+        <input type="radio" id="female" v-model="Gender" name="gender" value="Female">
         <label for="female">Female</label><br>
-        <input type="checkbox" id="other" v-model="Gender" name="gender" value="other" checked=checked>
+        <input type="radio" id="other" v-model="Gender" name="gender" value="Other" checked=checked>
         <label for="other">Other</label>
         <br>
 
@@ -152,8 +142,14 @@
 
 
 
-        <button type="myButtonID"><img src="https://thumbs.dreamstime.com/b/pizza-courier-motorbike-flat-character-riding-delivery-guy-scooter-wearing-protective-helmet-drawing-food-carrier-vector-160349904.jpg" width = 20 height =20 > Send Order!</button>
-
+        <button type="myButtonID" v-on:click="addOrder" ><img src="https://thumbs.dreamstime.com/b/pizza-courier-motorbike-flat-character-riding-delivery-guy-scooter-wearing-protective-helmet-drawing-food-carrier-vector-160349904.jpg" width = 20 height =20> Send Order!</button>
+<div v-if="orderButtonIsClicked">
+  <h1>Your order is on it's way!
+    <li v-for="object in customerInfo" id="receivedOrder">
+      {{object.value}}
+    </li>
+       <h1>
+</div>
 
 
       </form>

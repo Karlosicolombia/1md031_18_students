@@ -16,10 +16,10 @@ var vm = new Vue({
     orderId: "",
     count: 0,
 
-    gender: "",
-    payment: "",
-    email: "",
-    fullname: "",
+    Gender: "",
+    Payment: "",
+    Email: "",
+    Fullname: "",
     order: "",
 
 
@@ -37,18 +37,17 @@ methods:{
     this.orderButtonIsClicked = true
 
     this.customerInfo = []
-    this.customerInfo.push({value: "Fullname: " + this.fullname})
-    this.customerInfo.push({value: "Email: " + this.email})
-    this.customerInfo.push({value: "Gender: " + this.gender})
-    this.customerInfo.push({value: "Payment Method: " + this.payment})
-    this.customerInfo.push({value: "Order: " + this.checkBurgers})
+    this.customerInfo.push({value: " Fullname: " + this.Fullname})
+    this.customerInfo.push({value: " Email: " + this.Email})
+    this.customerInfo.push({value: " Gender: " + this.Gender})
+    this.customerInfo.push({value: " Payment Method: " + this.Payment})
+    this.customerInfo.push({value: " Order: " + this.checkBurgers})
 
   socket.emit("addOrder", { orderId: this.count++,
-                                    details: {
-                                    x: this.coordinates.x,
-                                    y: this.coordinates.y},
+                                    details: { x: this.coordinates.x,
+                                               y: this.coordinates.y},
                                     orderItems: this.checkBurgers,
-                                    customerInfo: ["Fullname: " + this.name, "Email: " + this.email, "Payment Method: " + this.payment]
+                                    customerInfo: [" Fullname: " + this.Fullname, " Email: " + this.Email, " Payment Method: " + this.Payment, " Gender: " + this.Gender ]
 
                                   });
                                   return
